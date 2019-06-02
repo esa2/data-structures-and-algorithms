@@ -21,5 +21,9 @@ public class LinkedlistTest {
         list.insert(22);
         assertEquals("Should create a new head node with a value of 22", list.head.value, 22);
         assertEquals("Make sure previous head node still there as next node", list.head.next.value, 11);
+
+
+        assertTrue("Should find last node value", list.includes(11));
+        assertFalse("Should not find matching value", list.includes(33));
     }
 }

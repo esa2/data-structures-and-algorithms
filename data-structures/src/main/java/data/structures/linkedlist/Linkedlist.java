@@ -15,4 +15,12 @@ public class Linkedlist {
             this.head = node;
         }
     }
+
+    public boolean includes(int val) {
+
+            for (Node itr = head; itr != null; itr = itr.next) {
+            if (itr.value == val) return true;
+        }
+        return false;
+    }
 }
