@@ -3,6 +3,7 @@ package data.structures.linkedlist;
 import org.junit.Test;
 
 import java.util.ArrayList;
+
 import static org.junit.Assert.*;
 
 public class LinkedlistTest {
@@ -52,5 +53,14 @@ public class LinkedlistTest {
         valuesArr.add(22);
         valuesArr.add(11);
         assertEquals("Should return all values in linked list as an array list", list.print(), valuesArr);
+    }
+
+    @Test
+    public void testLinkedlistAppend() {
+        Linkedlist list = new Linkedlist();
+        list.insert(11);
+        list.insert(22);
+        list.append(33);
+        assertEquals("Last node in list should have value 33", list.head.next.next.value, 33);
     }
 }
