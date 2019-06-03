@@ -35,4 +35,23 @@ public class Linkedlist {
         }
         return valuesArr;
     }
+
+    public void append(int val) {
+
+        Node node = new Node(val);
+        node.next = null;
+
+        // if list is empty append as head
+        if (this.head == null) {
+            this.head = node;
+        }
+        else {
+         // if list not empty loop to end and append new node
+            Node itr = this.head;
+            while (itr.next != null) {
+                itr = itr.next;
+            }
+            itr.next = node;
+        }
+    }
 }
