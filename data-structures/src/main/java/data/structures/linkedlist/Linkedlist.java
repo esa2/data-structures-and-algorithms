@@ -1,5 +1,7 @@
 package data.structures.linkedlist;
 
+import java.util.ArrayList;
+
 public class Linkedlist {
     Node head;
 
@@ -22,5 +24,15 @@ public class Linkedlist {
             if (itr.value == val) return true;
         }
         return false;
+    }
+
+    public ArrayList<Integer> print() {
+
+        ArrayList<Integer> valuesArr = new ArrayList<>();
+
+        for (Node itr = head; itr != null; itr = itr.next) {
+            valuesArr.add(itr.value);
+        }
+        return valuesArr;
     }
 }
