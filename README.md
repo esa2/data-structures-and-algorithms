@@ -20,7 +20,7 @@ Code challenge 03: Binary search in a sorted 1D array
 
 Code challenge 06: Extend the LinkedList class
 
-[README](code-challenges/READMEcc6.md)
+[README](data-structures/READMEcc6.md)
 ***
 
 Lab 05

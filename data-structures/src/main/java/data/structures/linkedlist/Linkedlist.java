@@ -75,7 +75,11 @@ public class Linkedlist {
                throw new IllegalArgumentException();
            }
        }
-       itrPrev.next = newNode;
+       if (itrPrev != null) {
+           itrPrev.next = newNode;
+       } else {
+           this.head = newNode;
+       }
        newNode.next = itr;
     }
 }
