@@ -63,12 +63,30 @@ public class LinkedlistTest {
     }
 
     @Test
+    public void testLinkedlistAppendMultiple() {
+        Linkedlist list = new Linkedlist();
+        list.insert(11);
+        list.append(22);
+        list.append(33);
+        assertEquals("Next to last node in list should have value 22", list.head.next.value, 22);
+        assertEquals("Last node in list should have value 33", list.head.next.next.value, 33);
+    }
+
+    @Test
     public void testLinkedlistInsertBefore() {
         Linkedlist list = new Linkedlist();
         list.insert(11);
         list.insert(22);
         list.insertBefore(11, 33);
         assertEquals("2nd node in list should have value 33", list.head.next.value, 33);
+    }
+
+    @Test
+    public void testLinkedlistInsertBeforeFirst() {
+        Linkedlist list = new Linkedlist();
+        list.insert(11);
+        list.insertBefore(11, 22);
+        assertEquals("Head node in list should have value 22", list.head.value, 22);
     }
 
     @Test(expected = IllegalArgumentException.class)
