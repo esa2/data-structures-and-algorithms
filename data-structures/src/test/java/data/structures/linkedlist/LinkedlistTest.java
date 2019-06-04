@@ -1,9 +1,7 @@
 package data.structures.linkedlist;
 
 import org.junit.Test;
-
 import java.util.ArrayList;
-
 import static org.junit.Assert.*;
 
 public class LinkedlistTest {
@@ -62,5 +60,28 @@ public class LinkedlistTest {
         list.insert(22);
         list.append(33);
         assertEquals("Last node in list should have value 33", list.head.next.next.value, 33);
+    }
+
+    @Test
+    public void testLinkedlistInsertBefore() {
+        Linkedlist list = new Linkedlist();
+        list.insert(11);
+        list.insert(22);
+        list.insertBefore(11, 33);
+        assertEquals("2nd node in list should have value 33", list.head.next.value, 33);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testLinkedlistInsertExceptionEmptyList() {
+        Linkedlist list = new Linkedlist();
+        list.insertBefore(88, 33);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testLinkedlistInsertExceptionValNotFound() {
+        Linkedlist list = new Linkedlist();
+        list.insert(11);
+        list.insert(12);
+        list.insertBefore(44, 33);
     }
 }
