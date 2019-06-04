@@ -82,4 +82,28 @@ public class Linkedlist {
        }
        newNode.next = itr;
     }
+
+    public void insertAfter(int val, int newVal) {
+
+        // Throw exception if empty linked list
+        if (this.head == null) {
+            System.out.println("The insert after value " + val + " was not found because the linked list is empty");
+            throw new IllegalArgumentException();
+        }
+
+        Node newNode = new Node(newVal);
+        Node itr = this.head;
+
+        while (itr.value != val) {
+            itr = itr.next;
+            // Throw exception if at end of link list
+            if (itr == null) {
+                System.out.println("The insert after value " + val + " was not found in the linked list");
+                throw new IllegalArgumentException();
+            }
+        }
+        Node NextNode = itr.next;
+        itr.next = newNode;
+        itr.next.next = NextNode;
+    }
 }

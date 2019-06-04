@@ -102,4 +102,36 @@ public class LinkedlistTest {
         list.insert(12);
         list.insertBefore(44, 33);
     }
+
+    @Test
+    public void testLinkedlistInsertAfter() {
+        Linkedlist list = new Linkedlist();
+        list.insert(11);
+        list.insert(22);
+        list.insertAfter(22, 33);
+        assertEquals("2nd node in list should have value 33", list.head.next.value, 33);
+    }
+
+    @Test
+    public void testLinkedlistInsertLast() {
+        Linkedlist list = new Linkedlist();
+        list.insert(11);
+        list.insert(22);
+        list.insertAfter(11, 33);
+        assertEquals("2nd node in list should have value 33", list.head.next.next.value, 33);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testLinkedlistInserAftertExceptionEmptyList() {
+        Linkedlist list = new Linkedlist();
+        list.insertAfter(8, 9);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testLinkedlistInsertAfterExceptionValNotFound() {
+        Linkedlist list = new Linkedlist();
+        list.insert(11);
+        list.insert(12);
+        list.insertAfter(44, 33);
+    }
 }
