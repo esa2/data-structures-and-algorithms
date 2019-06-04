@@ -54,4 +54,28 @@ public class Linkedlist {
             itr.next = node;
         }
     }
+
+    public void insertBefore(int val, int newVal) {
+
+       Node newNode = new Node(newVal);
+       Node itr = this.head;
+       Node itrPrev = null;
+
+       // Throw exception if empty linked list
+       if (itr == null) {
+           System.out.println("The insert before value " + val + " was not found because the linked list is empty");
+           throw new IllegalArgumentException();
+       }
+       while (itr.value != val) {
+           itrPrev = itr;
+           itr = itr.next;
+           // Throw exception if at end of link list
+           if (itr == null) {
+               System.out.println("The insert before value " + val + " was not found in the linked list");
+               throw new IllegalArgumentException();
+           }
+       }
+       itrPrev.next = newNode;
+       newNode.next = itr;
+    }
 }
