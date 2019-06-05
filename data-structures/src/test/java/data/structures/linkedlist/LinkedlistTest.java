@@ -134,4 +134,42 @@ public class LinkedlistTest {
         list.insert(12);
         list.insertAfter(44, 33);
     }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testkthFromEndArgTooBig() {
+        Linkedlist list = new Linkedlist();
+        list.insert(2);
+        list.insert(1);
+        list.kthFromEnd(2);
+
+    }
+
+    @Test public void testkthFromEndSameLength() {
+        Linkedlist list = new Linkedlist();
+        list.insert(2);
+        list.insert(1);
+        assertEquals("Should return head node value", list.kthFromEnd(1), 1);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testkthFromEndArgNegative() {
+        Linkedlist list = new Linkedlist();
+        list.kthFromEnd(-1);
+
+    }
+
+    @Test public void testkthFromEndLengthOne() {
+        Linkedlist list = new Linkedlist();
+        list.insert(1);
+        assertEquals("Should return head node value", list.kthFromEnd(0), 1);
+    }
+
+    @Test public void testkthFromEnd() {
+        Linkedlist list = new Linkedlist();
+        list.insert(4);
+        list.insert(3);
+        list.insert(2);
+        list.insert(1);
+        assertEquals("Should return value from node 2 from end", list.kthFromEnd(2), 2);
+    }
 }
