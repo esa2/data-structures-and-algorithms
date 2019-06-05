@@ -23,6 +23,11 @@ Code challenge 06: Extend the LinkedList class
 [README](data-structures/READMEcc6.md)
 ***
 
+Code challenge 07: Extend the LinkedList class
+
+[README](data-structures/READMEcc7.md)
+***
+
 Lab 05
 
 [README](data-structures/README.md)
