@@ -4,23 +4,6 @@ import org.junit.Test;
 import java.util.ArrayList;
 import static org.junit.Assert.*;
 
-class TestZip {
-    public static void main (String[] args) {
-
-        Linkedlist one;
-        one = new Linkedlist();
-        Linkedlist two = new Linkedlist();
-        one.insert(5);
-        one.insert(3);
-        one.insert(1);
-        two.insert(6);
-        two.insert(4);
-        two.insert(2);
-
-        Linkedlist.mergeLists(one, two);
-    }
-}
-
 public class LinkedlistTest {
 
     @Test
@@ -188,6 +171,35 @@ public class LinkedlistTest {
         list.insert(2);
         list.insert(1);
         assertEquals("Should return value from node 2 from end", list.kthFromEnd(2), 2);
+    }
+
+    @Test
+    public void testMergeMethod() {
+        Linkedlist one = new Linkedlist();
+        Linkedlist two = new Linkedlist();
+        one.insert(5);
+        one.insert(3);
+        one.insert(1);
+        two.insert(6);
+        two.insert(4);
+        two.insert(2);
+        assertEquals("Should return reference to head of the linked list", Linkedlist.mergeLists(one, two), one);
+    }
+
+    @Test
+    public void testMergeMethodEdgeCase() {
+        Linkedlist one = new Linkedlist();
+        Linkedlist two = new Linkedlist();
+        one.insert(1);
+        two.insert(2);
+        assertEquals("Should return reference to head of the linked list", Linkedlist.mergeLists(one, two), one);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testMergeMethodNull() {
+        Linkedlist one = new Linkedlist();
+        Linkedlist two = null;
+        Linkedlist.mergeLists(one, two);
     }
 }
 
