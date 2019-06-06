@@ -133,6 +133,11 @@ public class Linkedlist {
 
     public static Linkedlist mergeLists(Linkedlist one, Linkedlist two) {
 
+        if (one == null || two == null) {
+            System.out.println("Two valid linked lists are required");
+            throw new IllegalArgumentException();
+        }
+
             Node list1 = one.head;
             Node list2 = two.head;
             Node list1Next = null;
@@ -140,10 +145,17 @@ public class Linkedlist {
 
             while (list1 != null && list2 != null) {
 
+                // one = 1 3 5
+                // two = 2 4 6
+
+                // save pointer to second node in list one: 3
                 list1Next = list1.next;
+                // save pointer to second node in list two: 4
                 list2Next = list2.next;
 
+                // make next in zip list = first in list two: zip = 1 - 2 - 4 - 6
                 list1.next = list2;
+                // make next in zip list = second in list one: zip = 1 - 2 - 3 - 5
                 list2.next = list1Next;
 
                 list1 = list1Next;
@@ -153,6 +165,7 @@ public class Linkedlist {
         for (Node itr = one.head; itr != null; itr = itr.next) {
             System.out.println(itr.value);
         }
+
         return one;
     }
 }
