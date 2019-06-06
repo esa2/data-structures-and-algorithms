@@ -4,6 +4,23 @@ import org.junit.Test;
 import java.util.ArrayList;
 import static org.junit.Assert.*;
 
+class TestZip {
+    public static void main (String[] args) {
+
+        Linkedlist one;
+        one = new Linkedlist();
+        Linkedlist two = new Linkedlist();
+        one.insert(5);
+        one.insert(3);
+        one.insert(1);
+        two.insert(6);
+        two.insert(4);
+        two.insert(2);
+
+        Linkedlist.mergeLists(one, two);
+    }
+}
+
 public class LinkedlistTest {
 
     @Test
@@ -173,3 +190,4 @@ public class LinkedlistTest {
         assertEquals("Should return value from node 2 from end", list.kthFromEnd(2), 2);
     }
 }
+
