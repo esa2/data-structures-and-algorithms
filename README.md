@@ -28,6 +28,12 @@ Code challenge 07: Extend the LinkedList class
 [README](data-structures/READMEcc7.md)
 ***
 
+Code challenge 08: Merge two linked lists
+
+[README](data-structures/READMEcc8.md)
+***
+
+
 Lab 05
 
 [README](data-structures/README.md)
