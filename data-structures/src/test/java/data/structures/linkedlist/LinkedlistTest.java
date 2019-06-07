@@ -183,7 +183,19 @@ public class LinkedlistTest {
         two.insert(6);
         two.insert(4);
         two.insert(2);
-        assertEquals("Should return reference to head of the linked list", Linkedlist.mergeLists(one, two), one);
+        assertEquals("Should return head value 1", Linkedlist.mergeLists(one, two).head.value, 1);
+    }
+
+    @Test
+    public void testMergeMethodOdd() {
+        Linkedlist one = new Linkedlist();
+        Linkedlist two = new Linkedlist();
+        one.insert(5);
+        one.insert(4);
+        one.insert(3);
+        one.insert(1);
+        two.insert(2);
+        assertEquals("Should zip uneven length list and return 2 in 2nd node", Linkedlist.mergeLists(one, two).head.next.value,2);
     }
 
     @Test
@@ -202,4 +214,3 @@ public class LinkedlistTest {
         Linkedlist.mergeLists(one, two);
     }
 }
-
