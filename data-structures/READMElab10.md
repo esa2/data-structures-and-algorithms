@@ -50,4 +50,4 @@ peek method
 
 [See the tests for Stack class lab 10](src/test/java/stacksandqueues/StackTest.java)
 
-[See the tests for Queue class lab 10](src/test/java/stacksandqueues/StackQueue.java)
+[See the tests for Queue class lab 10](src/test/java/stacksandqueues/QueueTest.java)
