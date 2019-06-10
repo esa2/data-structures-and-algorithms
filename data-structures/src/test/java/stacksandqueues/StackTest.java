@@ -17,4 +17,20 @@ public class StackTest {
         newStack.push(1);
         assertEquals("Should push a new node on stack", newStack.top.value, 1);
     }
+
+    @Test
+    public void testStackClassPop() {
+        Stack  newStack = new Stack();
+        newStack.push(1);
+        newStack.push(2);
+        assertEquals("Should pop node with value 2", newStack.pop(), 2);
+        assertEquals("Node with value 1 should now be top", newStack.top.value, 1);
+    }
+
+    @Test
+    public void testStackClassPeek() {
+        Stack  newStack = new Stack();
+        newStack.push(1);
+        assertEquals("Should push a new node on stack", newStack.peek(), 1);
+    }
 }
