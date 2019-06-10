@@ -28,6 +28,16 @@ public class StackTest {
     }
 
     @Test
+    public void testStackClassEmpty() {
+        Stack  newStack = new Stack();
+        newStack.push(1);
+        newStack.push(2);
+        newStack.pop();
+        newStack.pop();
+        assertTrue("Can successfully empty a stack after multiple pops", newStack.top == null);
+    }
+
+    @Test
     public void testStackClassPeek() {
         Stack  newStack = new Stack();
         newStack.push(1);
