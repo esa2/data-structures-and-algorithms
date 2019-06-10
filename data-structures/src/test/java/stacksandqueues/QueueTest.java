@@ -28,6 +28,17 @@ public class QueueTest {
     }
 
     @Test
+    public void testQueueClassEmpty() {
+        Queue newQueue =  new Queue();
+        newQueue.enqueue(1);
+        newQueue.enqueue(2);
+        newQueue.dequeue();
+        newQueue.dequeue();
+        assertTrue("Can successfully empty a queue after multiple dequeues", newQueue.front == null);
+
+    }
+
+    @Test
     public void testQueueClassPeek() {
         Queue newQueue =  new Queue();
         newQueue.enqueue(1);

@@ -1,4 +1,4 @@
-***Lab 10 Stack and Queue Implementation***
+## Lab 10 Stack and Queue Implementation ##
 
 **Node Class:**
 Create a Node class that has properties for the value stored in the Node and a pointer to the next Node.
@@ -34,6 +34,13 @@ dequeue method
 peek method
 
 - Define a method called peek that does not take an argument and returns the value of the node located in the front of the queue, without removing it from the queue.
+
+**Approach & Efficiency**
+- All 3 stack methods and all 3 queue methods are O(1) time as they have addressability to the exact node they are either retrieving a value from or adding a next node to.
+
+- All methods are O(1) space as they create only one node each time they are invoked or simply return a value.
+
+***
 
 [See the Node Class for lab 10](src/main/java/stacksandqueues/Node.java)
 
