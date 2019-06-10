@@ -14,4 +14,20 @@ public class Stack {
             this.top = newNode;
         }
     }
+
+    public int pop() {
+
+        int topValue = this.top.value;
+
+        if (this.top.next == null) {
+            this.top = null;
+        } else {
+            this.top = this.top.next;
+        }
+        return topValue;
+    }
+
+    public int peek() {
+        return this.top.value;
+    }
 }
