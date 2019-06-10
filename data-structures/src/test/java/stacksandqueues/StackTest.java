@@ -1,8 +1,8 @@
 package stacksandqueues;
 
 import org.junit.Test;
-import static org.junit.Assert.*
-;
+import static org.junit.Assert.*;
+
 public class StackTest {
 
     @Test
@@ -31,6 +31,7 @@ public class StackTest {
     public void testStackClassPeek() {
         Stack  newStack = new Stack();
         newStack.push(1);
-        assertEquals("Should push a new node on stack", newStack.peek(), 1);
+        newStack.push(2);
+        assertEquals("Second node pushed should be top of stack", newStack.peek(), 2);
     }
 }
