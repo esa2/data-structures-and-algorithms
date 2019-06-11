@@ -38,4 +38,12 @@ public class PseudoQueueTest {
         newPseudoQueue.dequeue();
         assertEquals("Remove front of queue, new front should be 15", newPseudoQueue.queue.top.value, 15);
     }
+
+    @Test
+    public void testQueueEdgeCase() {
+        PseudoQueue newPseudoQueue = new PseudoQueue();
+        newPseudoQueue.enqueue(5);
+
+        assertEquals("Should enqueue with empty input stack", newPseudoQueue.queue.top.value, 5);
+    }
 }
