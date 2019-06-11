@@ -12,9 +12,9 @@ The Stack instances have only push, pop, and peek methods. You should use your o
 The method will pop n nodes off of input stack for an O(n) time solution. Space is O(1) as it created just one new node.
 
 ## Code
-[See the Pseudo Queue Class for code challenge 11](src/main/java/data/structures/linkedlist/PseudoQueue.java)
+[See the Pseudo Queue Class for code challenge 11](src/main/java/stacksandqueues/PseudoQueue.java)
 
-[See the tests](src/test/java/data/structures/linkedlist/PseudoQueue.java)
+[See the tests](src/test/java/stacksandqueues/PseudoQueueTest.java)
 
 ## Solution
 ![Screenshot](../assets/pseudoQ.png)
