@@ -12,4 +12,9 @@ public class PseudoQueue {
         while (stack1.top != null)
             queue.push(stack1.pop());
     }
+
+    public void dequeue() {
+
+            queue.pop();
+    }
 }
