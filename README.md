@@ -47,3 +47,8 @@ Code challenge 11: Create a PseudoQueue. Use only stacks to create the queue.
 
 [README](data-structures/READMEcc11.md)
 ***
+
+Code challenge 12: First-in, First out Animal Shelter
+
+[README](data-structures/READMEcc12.md)
+***
