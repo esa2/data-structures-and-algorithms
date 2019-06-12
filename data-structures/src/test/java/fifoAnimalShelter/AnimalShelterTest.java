@@ -2,7 +2,10 @@ package fifoAnimalShelter;
 
 import org.junit.Before;
 import org.junit.Test;
-import static org.junit.Assert.*;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
+
 
 public class AnimalShelterTest {
 
@@ -15,12 +18,24 @@ public class AnimalShelterTest {
     @Test
     public void testQueueClassNode() {
 
-        assertNull("Should create empty queue", newAnimalShelter.front);
+        assertNull("Should create empty queue", newAnimalShelter.dogFront);
     }
 
     @Test
-    public void testQueueClassEnqueue() {
-        newAnimalShelter.enqueue(1);
-        assertEquals("Should enqueue a new node on queue", newAnimalShelter.front.data, 1);
+    public void testQueueClassEnqueueDog() {
+        Dog newDog = new Dog();
+        newDog.name = "Fido";
+        newDog.species = "dog";
+        newAnimalShelter.enqueue(newDog);
+        assertEquals("Should enqueue and dequeue a dog", newAnimalShelter.dequeue("dog"), newDog);
+    }
+
+    @Test
+    public void testQueueClassEnqueueCat() {
+        Cat newCat = new Cat();
+        newCat.name = "Itchy";
+        newCat.species = "cat";
+        newAnimalShelter.enqueue(newCat);
+        assertEquals("Should enqueue and dequeue a cat", newAnimalShelter.dequeue("cat"), newCat);
     }
 }
