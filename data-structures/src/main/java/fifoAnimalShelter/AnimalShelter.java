@@ -44,6 +44,8 @@ public class AnimalShelter<T> {
 
     public T dequeue(T pref) {
 
+        if (pref != "dog" && pref != "cat") return null;
+
         if (pref == "dog") {
             if (this.dogFront == null) return null;
             Node<T> temp = this.dogFront;
