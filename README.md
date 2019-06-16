@@ -57,3 +57,8 @@ Code challenge 13: Multi-bracket Validation
 
 [README](code-challenges/READMEcc13.md)
 ***
+
+Lab Binary Tree and BST Implementation
+
+[README](data-structures/READMEtree.md)
+***
