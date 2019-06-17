@@ -9,7 +9,7 @@ public class BinarySearchTree {
         node = addRecursive(node, value);
     }
 
-    public Node addRecursive(Node current, int value) {
+    private Node addRecursive(Node current, int value) {
 
         if (current == null) return new Node(value);
 
@@ -21,5 +21,24 @@ public class BinarySearchTree {
             return current;
         }
         return current;
+    }
+
+    public boolean contains(int value) {
+        return containsRecursive(node, value);
+    }
+
+    private boolean containsRecursive(Node current, int value) {
+        boolean rv;
+
+        if (current == null) return false;
+
+        if (current.value == value) return true;
+
+        if (value < current.value) {
+            rv = containsRecursive(current.left, value);
+        } else {
+            rv = containsRecursive(current.right, value);
+        }
+        return rv;
     }
 }
