@@ -2,6 +2,8 @@ package tree;
 
 import org.junit.Test;
 
+import java.util.ArrayList;
+
 import static org.junit.Assert.*;
 
 public class BinarySearchTreeTest {
@@ -35,5 +37,27 @@ public class BinarySearchTreeTest {
         bst.add(10);
         bst.add(5);
         assertTrue("Should find node with value 5", bst.contains(5));
+    }
+
+    @Test
+    public void testPreOrder() {
+        ArrayList<Integer> list = new ArrayList<>();
+        list.add(10);
+        list.add(5);
+        list.add(2);
+        list.add(15);
+        list.add(25);
+        list.add(20);
+        list.add(26);
+        BinarySearchTree bst = new BinarySearchTree();
+        BinaryTree bt = new BinaryTree();
+        bst.add(10);
+        bst.add(5);
+        bst.add(2);
+        bst.add(15);
+        bst.add(25);
+        bst.add(26);
+        bst.add(20);
+        assertEquals("Should return a collection from a preOrder traversal", bt.preOrder(bst.node), list);
     }
 }
