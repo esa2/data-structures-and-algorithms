@@ -47,6 +47,7 @@ public class BinarySearchTreeTest {
         list.add(2);
         list.add(15);
         list.add(25);
+        list.add(20);
         list.add(26);
         BinarySearchTree bst = new BinarySearchTree();
         BinaryTree bt = new BinaryTree();
@@ -56,7 +57,7 @@ public class BinarySearchTreeTest {
         bst.add(15);
         bst.add(25);
         bst.add(26);
-        bt.preOrder(bst.node);
+        bst.add(20);
         assertEquals("Should return a collection from a preOrder traversal", bt.preOrder(bst.node), list);
     }
 }

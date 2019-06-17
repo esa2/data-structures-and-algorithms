@@ -1,40 +1,35 @@
 package tree;
 
+// source: https://www.baeldung.com/java-binary-tree
+
 import java.util.ArrayList;
-import java.util.List;
 
 public class BinaryTree {
     Node node;
+    ArrayList<Integer> list = new ArrayList<>();
 
-    public List preOrder(Node node) {
+    public ArrayList<Integer> preOrder(Node node) {
 
-        ArrayList<Integer> list = new ArrayList<>();
-        Node root = node;
+        if (node != null) {
+            System.out.print(" " + node.value);
 
-        list.add(node.value);
-
-        while (node.left != null) {
-            list.add(node.left.value);
-            node = node.left;
-        }
-
-        node = root;
-        while (node.right != null) {
-            list.add(node.right.value);
-            node = node.right;
+            list.add(node.value);
+            preOrder(node.left);
+            preOrder(node.right);
         }
         return list;
     }
 
-    public int[] inOrder() {
 
-        int[] arr = {1};
-        return arr;
+    public ArrayList<Integer> inOrder(Node node) {
+
+      
+        return list;
     }
 
-    public int[] postOrder() {
+    public ArrayList<Integer> postOrder(Node node) {
 
-        int[] arr = {1};
-        return arr;
+
+        return list;
     }
 }
