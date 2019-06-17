@@ -28,4 +28,12 @@ public class BinarySearchTreeTest {
         assertEquals("Should add a left child and right child to a single root node", bst.node.left.value, 5);
         assertEquals("Should add a left child and right child to a single root node", bst.node.right.value, 15);
     }
+
+    @Test
+    public void testContains() {
+        BinarySearchTree bst = new BinarySearchTree();
+        bst.add(10);
+        bst.add(5);
+        assertTrue("Should find node with value 5", bst.contains(5));
+    }
 }
