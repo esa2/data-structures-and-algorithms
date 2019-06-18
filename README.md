@@ -62,3 +62,8 @@ Lab Binary Tree and BST Implementation
 
 [README](data-structures/READMEtree.md)
 ***
+
+Code challenge 16: Fizz Buzz Tree
+
+[README](data-structures/READMEcc16.md)
+***
