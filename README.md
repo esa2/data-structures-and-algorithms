@@ -68,5 +68,7 @@ Code challenge 16: Fizz Buzz Tree
 [README](data-structures/READMEcc16.md)
 ***
 
+Code challenge 17: Breadth first traversal of a tree
+
 [README](data-structures/READMEcc17.md)
 ***
