@@ -49,7 +49,7 @@ public class BinaryTree {
 
         while (!ll.isEmpty()) {
             Node node = ll.remove();
-            System.out.println(node.value);
+            System.out.print(" " + node.value);
 
             if (node.left != null) {
                 ll.add(node.left);
@@ -58,7 +58,22 @@ public class BinaryTree {
                 ll.add(node.right);
             }
         }
+    }
 
+    public int findMaximunValue(Node node) {
+
+        int max = 0;
+
+        if (node != null) {
+            if (node.value > max) max = node.value;
+
+            int leftValue = findMaximunValue(node.left);
+            int rightValue = findMaximunValue(node.right);
+
+            if (leftValue > max) max = leftValue;
+            if (rightValue > max) max = rightValue;
+        }
+        return max;
     }
 }
 
