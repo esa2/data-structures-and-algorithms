@@ -77,3 +77,8 @@ Code challenge 18: Find the Maximum Value in a Binary Tree
 
 [README](data-structures/READMEcc18.md)
 ***
+
+Code challenge 26: Insertion Sort
+
+[README](code-challenges/READMEcc26.md)
+***
