@@ -82,3 +82,8 @@ Code challenge 26: Insertion Sort
 
 [README](code-challenges/READMEcc26.md)
 ***
+
+Code challenge 27: Merge Sort
+
+[README](code-challenges/READMEcc27.md)
+***
