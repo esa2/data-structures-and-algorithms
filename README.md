@@ -87,3 +87,8 @@ Code challenge 27: Merge Sort
 
 [README](code-challenges/READMEcc27.md)
 ***
+
+Code challenge 28: Quick Sort
+
+[README](code-challenges/READMEcc28.md)
+***
