@@ -27,6 +27,14 @@ public class HashtableTest {
     }
 
     @Test
+    public void testHashGetCollisionValue() {
+        Hashtable ht = new Hashtable();
+        ht.add("b", "Josie"); // b = ascii 98
+        ht.add("A!", "Scooter"); // A! = ascii 98
+        assertEquals("Should return value of second node after collision", ht.get("A!"), "Scooter");
+    }
+
+    @Test
     public void testHashGetNotFound() {
         Hashtable ht = new Hashtable();
         assertNull("Should return null if key not in table", ht.get("Rat"));
