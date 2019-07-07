@@ -92,3 +92,8 @@ Code challenge 28: Quick Sort
 
 [README](code-challenges/READMEcc28.md)
 ***
+
+Lab: Hash Table Implementation
+
+[README](code-challenges/READMEhash.md)
+***
