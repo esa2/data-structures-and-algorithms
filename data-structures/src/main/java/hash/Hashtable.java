@@ -11,10 +11,8 @@ public class Hashtable<K, V> {
         K key;
         V value;
 
-        // Reference to next node
         HashNode<K, V> next;
 
-        // Constructor
         public HashNode(K key, V value) {
             this.key = key;
             this.value = value;
@@ -44,24 +42,26 @@ public class Hashtable<K, V> {
         return index;
     }
 
+    // add: takes in both the key and value.
+    // This method should hash the key, and add the key and value pair to the table, handling collisions as needed.
     public V add(K key, V value) {
         int bucketIndex = getIndex(key);
-        HashNode<K, V> head = hashArray.get(bucketIndex);
+        HashNode<K, V> node = hashArray.get(bucketIndex);
 
         // check if key is already in array
-        while (head != null) {
-            if (head.key.equals(key)) {
-                head.value = value;
-                return head.value;
+        while (node != null) {
+            if (node.key.equals(key)) {
+                node.value = value;
+                return node.value;
             }
-            head = head.next;
+            node = node.next;
         }
 
-        head = hashArray.get(bucketIndex);
+        node = hashArray.get(bucketIndex);
         HashNode<K, V> newNode = new HashNode<K, V>(key, value);
         System.out.println(newNode.key);
         System.out.println(newNode.value);
-        newNode.next = head;
+        newNode.next = node;
         hashArray.set(bucketIndex, newNode);
         return newNode.value;
     }
@@ -77,4 +77,19 @@ public class Hashtable<K, V> {
         }
         return null;
     }
+
+    // contains: takes in the key and returns a boolean, indicating if the key exists in the table already.
+    public boolean contains(K key) {
+        int index = getIndex(key);
+        HashNode<K, V> node = hashArray.get(index);
+
+        while (node != null) {
+            if (node.key.equals(key)) return true;
+            node = node.next;
+        }
+        return false;
+    }
+
+
+    // hash: takes in an arbitrary key and returns an index in the collection.
 }

@@ -18,4 +18,18 @@ public class HashtableTest {
         ht.add("Cat", "Josie");
         assertEquals("Should return value at key: Cat", ht.get("Cat"), "Josie");
     }
+
+    @Test
+    public void testHashContainsTrue() {
+        Hashtable ht = new Hashtable();
+        ht.add("Cat", "Josie");
+        assertEquals("Should return true", ht.contains("Cat"), true);
+    }
+
+    @Test
+    public void testHashContainsFalse() {
+        Hashtable ht = new Hashtable();
+        ht.add("Cat", "Josie");
+        assertEquals("Should return false", ht.contains("Dog"), false);
+    }
 }
