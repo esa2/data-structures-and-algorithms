@@ -44,7 +44,7 @@ public class Hashtable<K, V> {
         return index;
     }
 
-    public void add(K key, V value) {
+    public V add(K key, V value) {
         int bucketIndex = getIndex(key);
         HashNode<K, V> head = hashArray.get(bucketIndex);
 
@@ -52,7 +52,7 @@ public class Hashtable<K, V> {
         while (head != null) {
             if (head.key.equals(key)) {
                 head.value = value;
-                return;
+                return head.value;
             }
             head = head.next;
         }
@@ -63,5 +63,18 @@ public class Hashtable<K, V> {
         System.out.println(newNode.value);
         newNode.next = head;
         hashArray.set(bucketIndex, newNode);
+        return newNode.value;
+    }
+
+    // get: takes in the key and returns the value from the table.
+    public V get(K key) {
+        int index = getIndex(key);
+        HashNode<K, V> head = hashArray.get(index);
+
+        while (head != null) {
+            if (head.key.equals(key)) return head.value;
+            head = head.next;
+        }
+        return null;
     }
 }
