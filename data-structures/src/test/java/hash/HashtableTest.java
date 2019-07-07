@@ -2,7 +2,7 @@ package hash;
 
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 public class HashtableTest {
 
@@ -31,5 +31,11 @@ public class HashtableTest {
         Hashtable ht = new Hashtable();
         ht.add("Cat", "Josie");
         assertEquals("Should return false", ht.contains("Dog"), false);
+    }
+
+    @Test
+    public void testHashHash() {
+        Hashtable ht = new Hashtable();
+        assertEquals("Should return index integer", ht.hash("Dog"), 982);
     }
 }
