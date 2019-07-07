@@ -90,6 +90,8 @@ public class Hashtable<K, V> {
         return false;
     }
 
-
     // hash: takes in an arbitrary key and returns an index in the collection.
+    public int hash(K key) {
+        return getIndex(key);
+    }
 }
