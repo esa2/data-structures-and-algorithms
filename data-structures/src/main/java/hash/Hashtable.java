@@ -38,31 +38,31 @@ public class Hashtable<K, V> {
 
         temp *= 599;
         index = temp % 1024;
-        System.out.println("index: " + index);
         return index;
     }
 
     // add: takes in both the key and value.
     // This method should hash the key, and add the key and value pair to the table, handling collisions as needed.
     public V add(K key, V value) {
-        int bucketIndex = getIndex(key);
-        HashNode<K, V> node = hashArray.get(bucketIndex);
+        int index = getIndex(key);
+        HashNode<K, V> node = hashArray.get(index);
 
         // check if key is already in array
         while (node != null) {
             if (node.key.equals(key)) {
                 node.value = value;
+                System.out.println("collision key: " + node.key);
+                System.out.println("collision value: " + node.value);
+                System.out.println("collision index: " + index);
                 return node.value;
             }
             node = node.next;
         }
 
-        node = hashArray.get(bucketIndex);
+        node = hashArray.get(index);
         HashNode<K, V> newNode = new HashNode<K, V>(key, value);
-        System.out.println(newNode.key);
-        System.out.println(newNode.value);
         newNode.next = node;
-        hashArray.set(bucketIndex, newNode);
+        hashArray.set(index, newNode);
         return newNode.value;
     }
 
