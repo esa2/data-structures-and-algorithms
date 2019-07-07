@@ -13,10 +13,23 @@ public class HashtableTest {
     }
 
     @Test
+    public void testHashAddCollision() {
+        Hashtable ht = new Hashtable();
+        ht.add("Cat", "Josie");
+        assertEquals("Should add second key value pair at duplicate index", ht.add("Cat", "Scooter"), "Scooter");
+    }
+
+    @Test
     public void testHashGet() {
         Hashtable ht = new Hashtable();
         ht.add("Cat", "Josie");
         assertEquals("Should return value at key: Cat", ht.get("Cat"), "Josie");
+    }
+
+    @Test
+    public void testHashGetNotFound() {
+        Hashtable ht = new Hashtable();
+        assertNull("Should return null if key not in table", ht.get("Rat"));
     }
 
     @Test
