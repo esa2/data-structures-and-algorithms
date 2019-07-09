@@ -97,3 +97,8 @@ Lab: Hash Table Implementation
 
 [README](data-structures/READMEhash.md)
 ***
+
+Code Challenge 31: Find repeated words
+
+[README](code-challenges/READMEcc31.md)
+***
