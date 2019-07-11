@@ -102,4 +102,8 @@ Code Challenge 31: Find repeated words
 
 [README](code-challenges/READMEcc31.md)
 ***
-=======
+
+Code Challenge 32: Tree Intersection
+
+[README](data-structures/READMEcc32.md)
+***
