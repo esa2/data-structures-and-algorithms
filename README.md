@@ -107,3 +107,8 @@ Code Challenge 32: Tree Intersection
 
 [README](data-structures/READMEcc32.md)
 ***
+
+Lab: Graph Implementation
+
+[README](data-structures/READMEgraph.md)
+***
