@@ -107,3 +107,8 @@ Code Challenge 32: Tree Intersection
 
 [README](data-structures/READMEcc32.md)
 ***
+
+Code Challenge 33: Left Join
+
+[README](code-challenges/READMEcc33.md)
+***
