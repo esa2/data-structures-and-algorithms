@@ -1,5 +1,7 @@
 package graph;
 
+// source: https://www.geeksforgeeks.org/graph-and-its-representations/
+
 import java.util.LinkedList;
 
 public class Graph {
@@ -24,5 +26,3 @@ public class Graph {
         return adjListArray.length;
     }
 }
-
-

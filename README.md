@@ -112,3 +112,8 @@ Code Challenge 33: Left Join
 
 [README](code-challenges/READMEcc33.md)
 ***
+
+Lab: Graph Implementation
+
+[README](data-structures/READMEgraph.md)
+***
