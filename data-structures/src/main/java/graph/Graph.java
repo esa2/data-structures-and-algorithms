@@ -58,11 +58,9 @@ public class Graph {
         Queue<Graph> toBeCounted = new LinkedList<>();
         toBeCounted.add(start);
         visited.add(start);
-        int ans = 0;
 
         while (!toBeCounted.isEmpty()) {
             Graph current = toBeCounted.remove();
-            ans++;
 
             for (Graph.Edge neighbor : current.neighbors) {
 
@@ -75,7 +73,6 @@ public class Graph {
         for (Graph node : visited) {
             System.out.println("Node name: " + node.name);
         }
-
         return visited;
     }
 
