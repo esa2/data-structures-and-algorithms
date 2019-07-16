@@ -1,13 +1,15 @@
 package graph;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 public class Graph {
     String name;
     List<Edge> neighbors;
     ArrayList<Graph> nodeList = new ArrayList<>();
+
+    public List<Edge> getNeighbors() {
+        return neighbors;
+    }
 
     public Graph(String name) {
         this.name = name;
@@ -34,7 +36,6 @@ public class Graph {
     }
 
     public List getNeighbors(Graph node) {
-        System.out.println(node.neighbors.get(0).weight);
         return node.neighbors;
     }
 
@@ -51,9 +52,40 @@ public class Graph {
         return false;
     }
 
-    class Edge {
+    public HashSet breadthFirst(Graph start) {
+
+        HashSet<Graph> visited = new HashSet<>();
+        Queue<Graph> toBeCounted = new LinkedList<>();
+        toBeCounted.add(start);
+        visited.add(start);
+        int ans = 0;
+
+        while (!toBeCounted.isEmpty()) {
+            Graph current = toBeCounted.remove();
+            ans++;
+
+            for (Graph.Edge neighbor : current.neighbors) {
+
+                if (!visited.contains(neighbor)) {
+                    toBeCounted.add(neighbor.node);
+                    visited.add(neighbor.node);
+                }
+            }
+        }
+        for (Graph node : visited) {
+            System.out.println("Node name: " + node.name);
+        }
+
+        return visited;
+    }
+
+    public class Edge {
         int weight;
         Graph node;
+
+        public Graph getNode() {
+            return node;
+        }
 
         public Edge(int weight, Graph node) {
             this.weight = weight;

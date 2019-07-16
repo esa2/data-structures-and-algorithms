@@ -72,4 +72,22 @@ public class GraphTest {
         Graph graph = new Graph("test");
         assertEquals("Should return null", graph.getNodes(), null);
     }
+
+    @Test
+    public void testBreadthFirst1node() {
+        Graph graph = new Graph("test");
+        Graph node1 = graph.addNode("node1");
+        assertEquals("Should return a hash set size 1", graph.breadthFirst(node1).size(), 1);
+    }
+
+    @Test
+    public void testBreadthFirst4nodes() {
+        Graph graph = new Graph("node1");
+        Graph node1 = graph.addNode("node2");
+        Graph node2 = graph.addNode("node2");
+        graph.addEdge(node1, node2, 2);
+        Graph node3 = graph.addNode("node3");
+        graph.addEdge(node1, node3, 2);
+        assertEquals("Should return a hash set size 4", graph.breadthFirst(node1).size(), 4);
+    }
 }
