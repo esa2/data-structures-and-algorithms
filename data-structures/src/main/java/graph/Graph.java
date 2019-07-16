@@ -28,7 +28,18 @@ public class Graph {
     }
 
     public ArrayList getNodes() {
+
+        if (nodeList.size() == 0) return null;
         return nodeList;
+    }
+
+    public List getNeighbors(Graph node) {
+        System.out.println(node.neighbors.get(0).weight);
+        return node.neighbors;
+    }
+
+    public int size() {
+        return nodeList.size();
     }
 
     public boolean isConnectedTo(Graph otherNode) {
