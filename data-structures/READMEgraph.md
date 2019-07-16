@@ -33,6 +33,14 @@ Size()
 
 Approach:
 
+- Use a linked list of neighbors to hold neighbor nodes. Use a List to hold edges
 
 Efficiency:
 
+- Adding a node is O(1) time using the List add method and O(1) space
+
+- Adding an edge is O(1) time as it adds to the begining of a linked list. It os O(1) space as well for the one or two nodes added.
+
+- GetNeighbors is O(1) time as all nodes in the neighbor linked list are simply returned
+
+- The isConnecedTo method is O(n) as it iterates over the neighbor linked list to check for connections.
