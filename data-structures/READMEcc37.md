@@ -12,7 +12,7 @@ Time complexity is O(n) as we loop thru each linkedlist of neighbors. Space is O
 
 
 ## Code
-[See the BreadthFirst code](src/main/java/graph/Graph.java)
+[See the getEdges code](src/main/java/graph/Graph.java)
 
 [See the tests](src/test/java/graph/GraphTest.java)
 
