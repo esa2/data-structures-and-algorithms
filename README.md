@@ -118,7 +118,13 @@ Lab: Graph Implementation
 [README](data-structures/READMEgraph.md)
 ***
 
-Code Challenge 33: Breadth-first traversal on a graph
+Code Challenge 36: Breadth-first traversal on a graph
 
 [README](data-structures/READMEcc36.md)
 ***
+
+Code Challenge 37: Determine if nodes are connected
+
+[README](data-structures/READMEcc37.md)
+***
+

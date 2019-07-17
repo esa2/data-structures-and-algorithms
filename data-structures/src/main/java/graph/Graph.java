@@ -76,6 +76,29 @@ public class Graph {
         return visited;
     }
 
+    public String[] getEdges(Graph node, String[] cities) {
+        String[] returnArray = new String[2];
+        int i = 1;
+        int price = 0;
+        boolean edgeFound = false;
+
+                while (i < cities.length) {
+                    for (Graph.Edge ele : node.neighbors) {
+
+                        if (ele.node.name == cities[i]) {
+                            node = ele.node;
+                            price += ele.weight;
+                            returnArray[0] = "True";
+                            returnArray[1] = "$" + price;
+                            edgeFound = true;
+                        }
+                    }
+                    i++;
+                }
+                if (!edgeFound) return new String[]{"False", "$0"};
+        return returnArray;
+    }
+
     public class Edge {
         int weight;
         Graph node;
