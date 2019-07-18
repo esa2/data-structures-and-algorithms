@@ -1,11 +1,11 @@
-package stacksandqueues;
-
-public class Node {
-    int value;
-    Node next;
-
-    Node(int value) {
-        this.value = value;
-        this.next = null;
-    }
-}
+//package stacksandqueues;
+//
+//public class Node {
+//    int value;
+//    Node next;
+//
+//    Node(int value) {
+//        this.value = value;
+//        this.next = null;
+//    }
+//}

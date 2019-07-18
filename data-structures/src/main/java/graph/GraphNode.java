@@ -1,30 +1,28 @@
 package graph;
 
-import tree.Node;
-
 import java.util.*;
 
-public class Graph {
+public class GraphNode {
     String name;
     List<Edge> neighbors;
-    ArrayList<Graph> nodeList = new ArrayList<>();
+    ArrayList<GraphNode> nodeList = new ArrayList<>();
 
     public List<Edge> getNeighbors() {
         return neighbors;
     }
 
-    public Graph(String name) {
+    public GraphNode(String name) {
         this.name = name;
         this.neighbors = new LinkedList<>();
     }
 
-    public Graph addNode(String name) {
-        Graph node = new Graph(name);
+    public GraphNode addNode(String name) {
+        GraphNode node = new GraphNode(name);
         nodeList.add(node);
         return node;
     }
 
-    public void addEdge(Graph node1, Graph node2, int weight) {
+    public void addEdge(GraphNode node1, GraphNode node2, int weight) {
         if (!this.isConnectedTo(node2)) {
             node1.neighbors.add(new Edge(weight, node2));
             node2.neighbors.add(new Edge(weight, this));
@@ -37,7 +35,7 @@ public class Graph {
         return nodeList;
     }
 
-    public List getNeighbors(Graph node) {
+    public List getNeighbors(GraphNode node) {
         return node.neighbors;
     }
 
@@ -45,7 +43,7 @@ public class Graph {
         return nodeList.size();
     }
 
-    public boolean isConnectedTo(Graph otherNode) {
+    public boolean isConnectedTo(GraphNode otherNode) {
         for (Edge e : this.neighbors) {
             if (e.node == otherNode) {
                 return true;
@@ -54,17 +52,17 @@ public class Graph {
         return false;
     }
 
-    public HashSet breadthFirst(Graph start) {
+    public HashSet breadthFirst(GraphNode start) {
 
-        HashSet<Graph> visited = new HashSet<>();
-        Queue<Graph> toBeCounted = new LinkedList<>();
+        HashSet<GraphNode> visited = new HashSet<>();
+        Queue<GraphNode> toBeCounted = new LinkedList<>();
         toBeCounted.add(start);
         visited.add(start);
 
         while (!toBeCounted.isEmpty()) {
-            Graph current = toBeCounted.remove();
+            GraphNode current = toBeCounted.remove();
 
-            for (Graph.Edge neighbor : current.neighbors) {
+            for (GraphNode.Edge neighbor : current.neighbors) {
 
                 if (!visited.contains(neighbor)) {
                     toBeCounted.add(neighbor.node);
@@ -72,20 +70,20 @@ public class Graph {
                 }
             }
         }
-        for (Graph node : visited) {
+        for (GraphNode node : visited) {
             System.out.println("Node name: " + node.name);
         }
         return visited;
     }
 
-    public String[] getEdges(Graph node, String[] cities) {
+    public String[] getEdges(GraphNode node, String[] cities) {
         String[] returnArray = new String[2];
         int i = 1;
         int price = 0;
         boolean edgeFound = false;
 
                 while (i < cities.length) {
-                    for (Graph.Edge ele : node.neighbors) {
+                    for (GraphNode.Edge ele : node.neighbors) {
 
                         if (ele.node.name == cities[i]) {
                             node = ele.node;
@@ -101,25 +99,29 @@ public class Graph {
         return returnArray;
     }
 
-    public HashSet deapthFirst(Graph start) {
+    public LinkedList depthFirst(GraphNode start) {
 
-        HashSet<Graph> visited = new HashSet<>();
-        Stack<Graph> toBeCounted = new LinkedList<>();
+        LinkedList<GraphNode> visited = new LinkedList<>();
+        LinkedList<GraphNode> toBeCounted = new LinkedList<>();
         toBeCounted.push(start);
         visited.add(start);
 
         while (!toBeCounted.isEmpty()) {
-            Graph current = toBeCounted.pop();
+            GraphNode current = toBeCounted.pop();
 
-            for (Graph.Edge neighbor : current.neighbors) {
+            for (GraphNode.Edge neighbor : current.neighbors) {
 
                 if (!visited.contains(neighbor)) {
-                    toBeCounted.push(neighbor.node);
-                    visited.add(neighbor.node);
+                    if (neighbor.node.name != "x") {
+                        toBeCounted.push(neighbor.node);
+                        visited.add(neighbor.node);
+                    }
                 }
             }
         }
-        for (Graph node : visited) {
+
+
+        for (GraphNode node : visited) {
             System.out.println("Node name: " + node.name);
         }
         return visited;
@@ -127,13 +129,13 @@ public class Graph {
 
     public class Edge {
         int weight;
-        Graph node;
+        GraphNode node;
 
-        public Graph getNode() {
+        public GraphNode getNode() {
             return node;
         }
 
-        public Edge(int weight, Graph node) {
+        public Edge(int weight, GraphNode node) {
             this.weight = weight;
             this.node = node;
         }
