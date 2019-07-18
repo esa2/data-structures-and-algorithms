@@ -128,3 +128,8 @@ Code Challenge 37: Determine if nodes are connected
 [README](data-structures/READMEcc37.md)
 ***
 
+Code Challenge 38: Depth first preorder traversal on a graph
+
+[README](data-structures/READMEcc38.md)
+***
+

@@ -1,5 +1,7 @@
 package graph;
 
+import tree.Node;
+
 import java.util.*;
 
 public class Graph {
@@ -97,6 +99,30 @@ public class Graph {
                 }
                 if (!edgeFound) return new String[]{"False", "$0"};
         return returnArray;
+    }
+
+    public HashSet deapthFirst(Graph start) {
+
+        HashSet<Graph> visited = new HashSet<>();
+        Stack<Graph> toBeCounted = new LinkedList<>();
+        toBeCounted.push(start);
+        visited.add(start);
+
+        while (!toBeCounted.isEmpty()) {
+            Graph current = toBeCounted.pop();
+
+            for (Graph.Edge neighbor : current.neighbors) {
+
+                if (!visited.contains(neighbor)) {
+                    toBeCounted.push(neighbor.node);
+                    visited.add(neighbor.node);
+                }
+            }
+        }
+        for (Graph node : visited) {
+            System.out.println("Node name: " + node.name);
+        }
+        return visited;
     }
 
     public class Edge {
