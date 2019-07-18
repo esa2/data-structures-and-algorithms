@@ -6,11 +6,15 @@ Write a function that accepts an adjacency list as a graph, and conducts a depth
 
 ## Approach & Efficiency
 
+This search uses a Linked List
+
+The time complexity is O(n) as the neighbors collection is iterated over to determine if we have seen a node or not. Space is O(n) as all nodes are added to a new Linked List.
+
 
 ## Code
-[See the deapthFirst code](src/main/java/graph/Graph.java)
+[See the depthFirst code](src/main/java/graph/GraphNode.java)
 
 [See the tests](src/test/java/graph/GraphTest.java)
 
 ## Solution
-![Screenshot](../assets/depthfirst.png)
+![Screenshot](../assets/dft.png)
